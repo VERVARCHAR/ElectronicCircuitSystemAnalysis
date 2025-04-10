@@ -1,0 +1,21 @@
+# Fdb version 4
+["dvipdf"] 1744326061.12371 "sample.dvi" "sample.pdf" "sample" 1744326061.45288 0
+  "sample.dvi" 1744326061.11201 304 8abda3ad640b78f9fb463d359930ed3d "latex"
+  (generated)
+  "sample.pdf"
+  (rewritten before read)
+["latex"] 1744326060.88507 "/home/yuto/source/ElectricCircuitSystemAnalysis/sample.tex" "sample.dvi" "sample" 1744326061.4526 0
+  "/home/yuto/source/ElectricCircuitSystemAnalysis/sample.tex" 1744326060.644 73 846658ef165f094eb34f2c5596c04f0c ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-dvips.def" 1744143146 36117 b7fdd9e6a75bae5dca54ed25b47d5c84 ""
+  "/usr/local/texlive/2024/texmf-dist/tex/platex/base/jarticle.cls" 1601501154 25873 fd34d08164a3ea7afd6bc7fe99629a3d ""
+  "/usr/local/texlive/2024/texmf-dist/tex/platex/base/jsize10.clo" 1601501154 8603 0e3b68ad462d501024c2959e1acaa910 ""
+  "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1739380943 42148 61becc7c670cd061bb319c643c27fdd4 ""
+  "/usr/local/texlive/2024/texmf-var/web2c/euptex/platex.fmt" 1744301134 3562328 1afe8b1cbe8fc4a7471ab6b08cd3d11f ""
+  "/usr/local/texlive/2024/texmf.cnf" 1734194172.67578 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
+  "sample.aux" 1744326061.11201 32 3985256e7290058c681f74d7a3565a19 "latex"
+  "sample.tex" 1744326060.644 73 846658ef165f094eb34f2c5596c04f0c ""
+  (generated)
+  "sample.aux"
+  "sample.dvi"
+  "sample.log"
+  (rewritten before read)

@@ -1,0 +1,8 @@
+A more general two-terminal passive circuit is now discussed to demonstrate typical properties associated with power distribution and energy interchange between reactive components. 
+
+The particular form of RLC network chosen,fig 3.5,has a series R-L branch shunted by a series R-C branch.
+
+This form of circuit is of particular interest because,as reported by Hallen,
+the instantaneous rate of energy dissipation in resistor R1,R2 can be made time invariant.
+
+The circuit equations for fig3.5,with an ideal sinusoidal voltage supply,are given by A
