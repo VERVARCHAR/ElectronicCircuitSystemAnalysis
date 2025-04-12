@@ -1,0 +1,59 @@
+\documentclass[12pt, oneside]{book}
+
+% --- 日本語とフォントの設定（必要なら） ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+% --- ページと余白の設定 ---
+\usepackage[a4paper, margin=2.5cm]{geometry}
+
+% --- 図や色など ---
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{subcaption}
+
+% --- 数式用 ---
+\usepackage{amsmath, amssymb}
+
+
+% --- 目次で日本語が文字化けしないように ---
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=cyan
+}
+
+\title{電子回路入門}
+\author{山田 太郎}
+\date{\today}
+
+\begin{document}
+
+% --- 表紙 ---
+\maketitle
+\tableofcontents
+\newpage
+
+% --- 本文（例） ---
+\chapter{直流回路の基礎}
+\section{オームの法則}
+電流 \( I \) は電圧 \( V \) を抵抗 \( R \) で割ったものとして定義されます：
+
+\[
+I = \frac{V}{R}
+\]
+
+\section{回路図}
+
+\chapter{交流回路の基礎}
+\section{正弦波電流と電圧}
+交流では時間 \( t \) に対して電圧は次のように表されます：
+
+\[
+V(t) = V_0 \sin(\omega t + \phi)
+\]
+
+\end{document}
