@@ -1,4 +1,4 @@
-\documentclass[12pt, oneside]{book}
+\documentclass[12pt, oneside]{jarticle}
 
 % --- 日本語とフォントの設定（必要なら） ---
 \usepackage[utf8]{inputenc}
@@ -6,7 +6,7 @@
 \usepackage{lmodern}
 
 % --- ページと余白の設定 ---
-\usepackage[a4paper, margin=2.5cm]{geometry}
+\usepackage[a4paper, left=2cm, right=1.5cm, top=1.5cm, bottom=2cm]{geometry}
 
 % --- 図や色など ---
 \usepackage{graphicx}
@@ -17,7 +17,6 @@
 % --- 数式用 ---
 \usepackage{amsmath, amssymb}
 
-
 % --- 目次で日本語が文字化けしないように ---
 \usepackage{hyperref}
 \hypersetup{
@@ -26,34 +25,31 @@
     urlcolor=cyan
 }
 
-\title{電子回路入門}
-\author{山田 太郎}
-\date{\today}
+% --- タイトルなど ---
+
 
 \begin{document}
 
-% --- 表紙 ---
-\maketitle
-\tableofcontents
+% --- 表紙（maketitleを使うと上が空くので、手動で調整）---
+\vspace*{-1.5cm}  % 上部の空白を調整
+\begin{center}
+    {\LARGE \textbf{1AEI 3番 馬場 悠斗}}\\[1cm]
+\end{center}
+
+% --- 本文開始（例）---
+\section{直並列R-L-C回路の瞬時関係}
+ここでは、より一般的な2端子受動回路を取り上げ、配電と無効成分間のエネルギー交換に関連する典型的な特性を示す。
+
+図3.5は、直列R-C分岐によって短絡された直列R-L分岐を持つRLC回路である。
+
+この形式の回路が特に興味深いのは、Hallen,
+が報告しているように、抵抗R1,R2のエネルギー散逸の瞬間的な割合を時間不変にすることができるからである。
+
+図3.5の回路方程式は、理想的な正弦波電圧供給で、A
+
 \newpage
-
-% --- 本文（例） ---
-\chapter{直流回路の基礎}
-\section{オームの法則}
-電流 \( I \) は電圧 \( V \) を抵抗 \( R \) で割ったものとして定義されます：
-
-\[
-I = \frac{V}{R}
-\]
-
-\section{回路図}
-
-\chapter{交流回路の基礎}
-\section{正弦波電流と電圧}
-交流では時間 \( t \) に対して電圧は次のように表されます：
-
-\[
-V(t) = V_0 \sin(\omega t + \phi)
-\]
+\input{Derivation.tex}
+\newpage
+\input{Words.tex}
 
 \end{document}

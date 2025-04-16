@@ -1,3 +1,5 @@
+instantaneous relationship for series-parallel R-L-C load
+
 A more general two-terminal passive circuit is now discussed to demonstrate typical properties associated with power distribution and energy interchange between reactive components. 
 
 The particular form of RLC network chosen,fig 3.5,has a series R-L branch shunted by a series R-C branch.
