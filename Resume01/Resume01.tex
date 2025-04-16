@@ -1,22 +1,35 @@
-\documentclass[fleqn,11pt,a4paper]{jsarticle}
+\documentclass[fleqn,11pt,a4paper,dvipdfmx]{jsarticle}
 %
 \usepackage{amsmath,amssymb}
 \usepackage{bm}
-\usepackage{graphicx}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{bmpsize}  % ← バウンディングボックス用
 \usepackage{ascmac}
+\usepackage{multicol} 
+\usepackage{paracol}
+\usepackage{tikz}
+\usepackage{caption}
+\usetikzlibrary{calc}
 %
-\setlength{\textwidth}{\fullwidth}
-\setlength{\textheight}{39\baselineskip}
-\addtolength{\textheight}{\topskip}
-\setlength{\voffset}{-0.5in}
-\setlength{\headsep}{0.3in}
-\setlength{\mathindent}{0pt}  % 数式の左端インデントを0に
+% \setlength{\textwidth}{\fullwidth}
+% \setlength{\textheight}{39\baselineskip}
+% \addtolength{\textheight}{\topskip}
+% \setlength{\voffset}{-0.5in}
+% \setlength{\headsep}{0.3in}
+% \setlength{\mathindent}{0pt}  % 数式の左端インデントを0に
+\vspace*{-\baselineskip} % ← 不要な最初の空白を詰める
+\usepackage[
+  left=2cm,    % 左だけ広め
+  right=2cm,   % 右は狭め
+  top=2cm,     % 上も狭め
+  bottom=1.5cm   % 下も狭め
+]{geometry}
 %
 \newcommand{\divergence}{\mathrm{div}\,}  %ダイバージェンス
 \newcommand{\grad}{\mathrm{grad}\,}  %グラディエント
 \newcommand{\rot}{\mathrm{rot}\,}  %ローテーション
 %
-\pagestyle{myheadings}
+% \pagestyle{myheadings}
 \begin{document}
 %
 %
@@ -29,8 +42,7 @@
 
 図3.5の回路方程式は、理想的な正弦波電圧供給で、
 
-\newpage
-\input{Derivation.tex}
+
 \newpage
 \input{Words.tex}
 

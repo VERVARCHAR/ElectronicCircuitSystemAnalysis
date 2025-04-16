@@ -1,39 +1,118 @@
-\begin{flushleft}
-  \subsection[short]{a}
-  \begin{align*}
-    e     &= E_m \sin \omega t \\
-    i     &= \frac{e}{R} = \frac{E_m}{R} \sin \omega t \\
-    ei    &= E_m \sin \omega t \cdot \frac{E_m}{R} \sin \omega t \\
-          &= \frac{E_m^2}{R} \sin^2 \omega t \\
-          &= \frac{E_m^2}{R} \left( 1 - \cos 2 \omega t \right) \\
-    E     &= \frac{E_m}{\sqrt{2}} \text{より、} \\
-    E_m^2 &= 2E^2 \text{であるから、} \\
-    ei    &= ei_R = \frac{E^2}{R} \left( 1 - \cos 2 \omega t \right)
-  \end{align*}
+\documentclass[twocolumn]{article}
+\usepackage[a4paper,margin=1.5cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{lipsum} % サンプルテキスト用
+\usepackage{multicol}
+\usepackage{fancyhdr} % 追加: ヘッダーとフッターの制御
 
-  \subsection[short]{b}
-  \begin{align*}
-    e &= \sqrt{2}E \sin \omega t \\
-    &\text{インダクタンス } L\,[\text{H}] \text{ に流れる電流を } i\,[\text{A}] \text{ とすると、} \\
-    &\text{誘導起電力 } e_L\,[\text{V}] \text{ は} \\
+% 数式を段組みで使うための設定
+\setlength{\columnsep}{20pt} % 列間のスペースを調整
+% \vspace*{-\baselineskip} 
+% ← 不要な最初の空白を詰める% \setlength{\mathindent}{0pt}  % 数式の左端インデントを0に
+
+\begin{document}
+
+\begin{enumerate}
+  \item (a)の回路における電力の導出
+    \begin{align*}
+    &\text{入力電圧の最大値を} E_m \text{とすると}\\
+    e     &= E_m \sin \omega t \\ 
+    i     &= \frac{e}{R} = \frac{E_m}{R} \sin \omega t \\ 
+    ei    &= E_m \sin \omega t \cdot \frac{E_m}{R} \sin \omega t \\ 
+          &= \frac{E_m^2}{R} \sin^2 \omega t \\ 
+          &= \frac{E_m^2}{R} \left( 1 - \cos 2 \omega t \right) \\ 
+    E     &= \frac{E_m}{\sqrt{2}} \text{より、} \\ 
+    E_m^2 &= 2E^2 \text{であるから、} \\ 
+    ei    &= ei_R = \frac{E^2}{R} \left( 1 - \cos 2 \omega t \right) \\
+    \end{align*}
+
+  \item (b)の回路における電力の導出
+    \begin{align*}
+    e &= \sqrt{2}E \sin \omega t \\ 
+    &\text{インダクタンス } L\,[\text{H}] \text{ に流れる電流を } i\,[\text{A}] \\
+    &\text{とすると、誘導起電力 } e_L\,[\text{V}] \text{ は} \\
     e_L &= -L \frac{di}{dt} \\
-    &\text{また、キルヒホッフの法則より } e + e_L = 0 \text{ が成り立つため、} \\
-    e &= L \frac{di}{dt} \\
-    \frac{e}{L} dt &= di \\
-    \int di &= \int \frac{e}{L} dt \\
-    i &= \int \left(\sqrt{2} E \sin \omega t dt\right) \\
-      &= - \sqrt{2} \frac{E}{\omega L} \cos \omega t \\
-      &= \sqrt{2}\frac{E}{\omega L}\sin \left(\omega t - \frac{\pi}{2}\right) \\
-    &\text{これらの式から電力eiは} \\
-    ei  &= \frac{2E^2}{\omega L}\sin \omega t \cdot \sin \left(\omega t - \frac{\pi}{2}\right)\\
-    &\text{ここで、三角関数の積を和に直す公式である}
-    \sin \alpha \sin \beta = -\frac{1}{2} \left\{ \cos \left( \alpha + \beta\right) - \cos \left( \alpha - \beta\right)\right\}を用いると\\
-    ei  &= \frac{2E^2}{\omega L} \cdot \left(- \frac{1}{2} \left(\cos\left(\omega t + \omega t - \frac{\pi}{2}\right) - \cos\left(\omega t - \omega t + \frac{\pi}{2}\right) \right) \right)\\
-        &= -\frac{E^2}{\omega L} \left(\cos \left(2\omega t - \frac{\pi}{2}\right) - \cos\left( \frac{\pi}{2}\right)\right)\\
-        &= -\frac{E^2}{\omega L} \cos \left(2\omega t - \frac{\pi}{2}\right)\\
-    &\cos\left(- \theta\right) = \cos\left(\theta\right)\text{より,}\\
-        &= -\frac{E^2}{\omega L}\cos \left(\frac{\pi}{2} - 2\omega t\right)\\
-    &\cos\left(\frac{\pi}{2} - \theta\right) = \sin\left(\theta\right)\text{より,}\\
-    ei  &= -\frac{E^2}{\omega L} \sin \left(2\omega t\right) \\
-  \end{align*}
-\end{flushleft}
+    &e + e_L = 0 \text{ が成り立つため、} \\
+    e &= L \frac{di}{dt} \\ 
+    \frac{e}{L} dt &= di \\ 
+    \int di &= \int \frac{e}{L} dt \\ 
+    i &= \int \left(\sqrt{2} E \sin \omega t dt\right) \\ 
+      &= - \sqrt{2} \frac{E}{\omega L} \cos \omega t \\ 
+      &= \sqrt{2}\frac{E}{\omega L}\sin \left(\omega t - \frac{\pi}{2}\right) \\ 
+    ei  &= \frac{2E^2}{\omega L}\sin \omega t \cdot \sin \left(\omega t - \frac{\pi}{2}\right) \\
+    &\text{積和の公式} \\
+    &\sin\alpha \sin \beta = -\frac{1}{2} \left( \cos \left(\alpha + \beta\right) - \cos \left(\alpha - \beta\right) \right)\\
+    &\text{を用いて変形すると}\\
+    ei  &= \frac{2E^2}{\omega L} \left(- \frac{1}{2} \left(\cos\left(\omega t + \omega t - \frac{\pi}{2}\right) \right. \right. \\
+        &  \qquad\left.\left. - \cos\left(\omega t - \omega t + \frac{\pi}{2}\right) 
+        \right) \right)\\
+        &= -\frac{E^2}{\omega L} \cos \left(2\omega t - \frac{\pi}{2}\right) 
+    \end{align*}
+
+  \item (c)の回路における電力の導出
+    \begin{align*}
+    e &=\sqrt{2}E\sin\omega t\\
+    &\text{静電容量} C\,[\text{F}] \text{ に加わる電圧を } v\,[\text{V}] \\
+    &\text{とすると、流れる電流 } i\,[\text{A}] \text{ は} \\
+    i   &= \frac{dq}{dt} = \frac{d}{dt}Cv \\
+        &= C \frac{d \left(\sqrt{2}E\sin \omega t\right)}{dt} \\
+        &= \sqrt{2}\omega CE\cos\omega t\\
+    &\text{これらから,電力eiは}\\
+    ei &= 2E^2 \omega C \sin\omega t \cos \omega t \\ 
+    &= E^2 \omega C \sin \left(2 \omega t\right)\\
+    \end{align*}
+
+    \item (d)の回路における電力の導出
+    \begin{align*}
+      e   &=\sqrt{2}E\sin\omega t\\
+      &\text{また、各素子の電圧降下の合成と考えると}\\
+      e   &=iR + L \frac{di}{dt} \text{とも表すことができる.} \\
+      &\text{抵抗とリアクタンスの合成インピーダンスを} Z \text{,}\\
+      &\text{合成インピーダンスの位相のずれを} \Phi \text{とすると}\\
+      &\text{電流} i \text{は,}\\
+      i   &= \frac{\sqrt{2}E}{\|Z\|} \sin \left( \omega t - \Phi\right)\\
+      &\text{この} i \text{を用いて電力} ei \text{を表すと,}\\
+      ei  &= \sqrt{2}E\sin\omega t \cdot \frac{\sqrt{2}E}{\|Z\|} \sin \left( \omega t - \Phi\right) \\
+          &= \frac{2E^2}{\|Z\|}\sin\omega t \sin \left(\omega t - \Phi\right)\\
+      &\text{加法定理を用いて、}\sin \left(\omega t - \Phi\right) \text{を変形すると}\\
+      ei  &= \frac{2E^2}{\|Z\|}\sin\omega t \left(\sin\omega t \cos \Phi - \cos\omega t \sin \Phi\right)\\
+          &= \frac{2E^2}{\|Z\|} \left(\sin^2 \omega t \cos \Phi - \sin\omega t \cos\omega t \sin \Phi\right)\\
+          &= \frac{2E^2}{\|Z\|} \left(\sin^2 \omega t \cos \Phi \right) - \frac{2E^2}{\|Z\|} \left(\sin\omega t \cos\omega t \sin \Phi\right)\\
+      &\text{左の項にはsinの半角公式}\\
+      &\text{右の項には} \sin \alpha \cos \beta \text{の積和公式を用いて変形すると}\\
+      ei  &= \frac{2E^2}{\|Z\|} \left(\left(\frac{1-\cos2\omega t}{2}\right)\cos \Phi\right)\\
+          &- \frac{2E^2}{\|Z\|}\left(\frac{1}{2}\left(\sin2\omega t + \sin0\right) \sin \Phi\right)\\
+          &= \frac{E^2}{\|Z\|} \cos \Phi \left(1-\cos2\omega t\right) - \frac{E^2}{\|Z\|} \sin \Phi\sin2\omega t \\
+      &\text{また、各素子における電力を求める.}\\
+          &\text{抵抗での電圧降下}e_R \text{は,}\\
+          e_R &= iR = \frac{\sqrt{2}E}{\|Z\|} R \sin \left( \omega t - \Phi\right)\\
+          &\text{であるから,}\\
+          ei_R&= \frac{\sqrt{2}E}{\|Z\|} R \sin \left( \omega t - \Phi\right) \cdot \frac{\sqrt{2}E}{\|Z\|} \sin \left( \omega t - \Phi\right)\\
+              &= \frac{2E^2}{\|Z\|^2} R \sin^2 \left(\omega t - \Phi\right)\\
+          &\text{半角の公式を用いて}\\
+          &= \frac{2E^2}{\|Z\|^2} R \left( \frac{1-\cos2\left(\omega t - \Phi\right)}{2} \right)\\
+          &= \frac{E^2}{\|Z\|^2} R \left( 1-\cos2\left(\omega t - \Phi\right)\right)\\
+          &R\text{と}\omega L \text{との位相差は} \frac{\pi}{2} \text{であり、}\\
+          &\text{合成インピーダンス}Z\text{の位相差を}\Phi \text{とすると,}\\
+          &\frac{R}{\|Z\|} = \cos \Phi \text{となるため,}\\
+          ei_R&= \frac{E^2}{\|Z\|} \cos \Phi \left( 1-\cos2\left(\omega t - \Phi\right)\right)\\
+        \end{align*}
+        \begin{align*} 
+          &\text{次にコイルでの電圧降下}e_L \text{は,}\\
+          e_L &= L \frac{di}{dt} = L \frac{d}{dt} \left( \frac{\sqrt{2}E}{\|Z\|} \sin \left( \omega t - \Phi\right) \right)\\
+              &= \frac{\sqrt{2}E}{\|Z\|} \omega L \cos \left(\omega t - \Phi\right)\\
+          &\text{であるから,}\\
+          ei_L&= \frac{\sqrt{2}E}{\|Z\|}\omega L \cos\left(\omega t - \Phi\right) \cdot \frac{\sqrt{2}E}{\|Z\|} \sin \left( \omega t - \Phi\right)\\
+              &= \frac{2E^2}{\|Z\|^2} \omega L \cos\left(\omega t - \Phi\right)\sin\left(\omega t - \Phi\right)\\
+          &\text{積を和に直す公式を用いて変形すると,}\\
+          ei_L&= \frac{2E^2}{\|Z\|^2}\omega L \left(\frac{1}{2} \left(\sin 2\omega t - 2\Phi\right)\right) \\
+              &= \frac{E^2}{\|Z\|^2}\omega L \left(\sin 2\omega t - 2\Phi\right)\\
+          &\text{また,} \frac{\omega L}{\|Z\|} = \sin \Phi \text{となるため,}\\
+          ei_L&= \frac{E^2}{\|Z\|}\sin \Phi \left(\sin 2\omega t - 2\Phi\right)\\
+            \end{align*}
+  
+\end{enumerate}
+
+\end{document}
