@@ -1,0 +1,39 @@
+\begin{flushleft}
+  \subsection[short]{a}
+  \begin{align*}
+    e     &= E_m \sin \omega t \\
+    i     &= \frac{e}{R} = \frac{E_m}{R} \sin \omega t \\
+    ei    &= E_m \sin \omega t \cdot \frac{E_m}{R} \sin \omega t \\
+          &= \frac{E_m^2}{R} \sin^2 \omega t \\
+          &= \frac{E_m^2}{R} \left( 1 - \cos 2 \omega t \right) \\
+    E     &= \frac{E_m}{\sqrt{2}} \text{より、} \\
+    E_m^2 &= 2E^2 \text{であるから、} \\
+    ei    &= ei_R = \frac{E^2}{R} \left( 1 - \cos 2 \omega t \right)
+  \end{align*}
+
+  \subsection[short]{b}
+  \begin{align*}
+    e &= \sqrt{2}E \sin \omega t \\
+    &\text{インダクタンス } L\,[\text{H}] \text{ に流れる電流を } i\,[\text{A}] \text{ とすると、} \\
+    &\text{誘導起電力 } e_L\,[\text{V}] \text{ は} \\
+    e_L &= -L \frac{di}{dt} \\
+    &\text{また、キルヒホッフの法則より } e + e_L = 0 \text{ が成り立つため、} \\
+    e &= L \frac{di}{dt} \\
+    \frac{e}{L} dt &= di \\
+    \int di &= \int \frac{e}{L} dt \\
+    i &= \int \left(\sqrt{2} E \sin \omega t dt\right) \\
+      &= - \sqrt{2} \frac{E}{\omega L} \cos \omega t \\
+      &= \sqrt{2}\frac{E}{\omega L}\sin \left(\omega t - \frac{\pi}{2}\right) \\
+    &\text{これらの式から電力eiは} \\
+    ei  &= \frac{2E^2}{\omega L}\sin \omega t \cdot \sin \left(\omega t - \frac{\pi}{2}\right)\\
+    &\text{ここで、三角関数の積を和に直す公式である}
+    \sin \alpha \sin \beta = -\frac{1}{2} \left\{ \cos \left( \alpha + \beta\right) - \cos \left( \alpha - \beta\right)\right\}を用いると\\
+    ei  &= \frac{2E^2}{\omega L} \cdot \left(- \frac{1}{2} \left(\cos\left(\omega t + \omega t - \frac{\pi}{2}\right) - \cos\left(\omega t - \omega t + \frac{\pi}{2}\right) \right) \right)\\
+        &= -\frac{E^2}{\omega L} \left(\cos \left(2\omega t - \frac{\pi}{2}\right) - \cos\left( \frac{\pi}{2}\right)\right)\\
+        &= -\frac{E^2}{\omega L} \cos \left(2\omega t - \frac{\pi}{2}\right)\\
+    &\cos\left(- \theta\right) = \cos\left(\theta\right)\text{より,}\\
+        &= -\frac{E^2}{\omega L}\cos \left(\frac{\pi}{2} - 2\omega t\right)\\
+    &\cos\left(\frac{\pi}{2} - \theta\right) = \sin\left(\theta\right)\text{より,}\\
+    ei  &= -\frac{E^2}{\omega L} \sin \left(2\omega t\right) \\
+  \end{align*}
+\end{flushleft}
