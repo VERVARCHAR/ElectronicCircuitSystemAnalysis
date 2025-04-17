@@ -1,26 +1,20 @@
 \documentclass[twocolumn]{article}
-\usepackage[a4paper,margin=1.5cm]{geometry}
+\usepackage[top=15mm,bottom=15mm,left=15mm,right=15mm]{geometry}
 \usepackage{amsmath,amssymb}
-\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{setspace}
+\usepackage[dvipdfmx]{graphicx}
 \usepackage{caption}
-\usepackage{lipsum} % サンプルテキスト用
-\usepackage{multicol}
-\usepackage{fancyhdr} % 追加: ヘッダーとフッターの制御
-
-% 数式を段組みで使うための設定
-\setlength{\columnsep}{20pt} % 列間のスペースを調整
-% \vspace*{-\baselineskip} 
-% ← 不要な最初の空白を詰める% \setlength{\mathindent}{0pt}  % 数式の左端インデントを0に
-\usepackage{parskip}
-\setlength{\parskip}{0pt}  % 段落間の余白をなくす
-\usepackage{mathtools}
-\setlength{\abovedisplayskip}{0pt}
-\setlength{\belowdisplayskip}{0pt}
-\setlength{\abovedisplayshortskip}{0pt}
-\setlength{\belowdisplayshortskip}{0pt}
-
-\usepackage{enumitem}
-\setlist{nosep}  % 箇条書きの前後の余白を除去
+\setstretch{1.0}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\abovedisplayskip}{3pt}
+\setlength{\belowdisplayskip}{3pt}
+\setlength{\abovedisplayshortskip}{3pt}
+\setlength{\belowdisplayshortskip}{3pt}
+\titlespacing*{\section}{0pt}{10pt}{5pt}
+\titlespacing*{\subsection}{0pt}{8pt}{4pt}
+\pagestyle{empty}
 
 \begin{document}
 
@@ -74,6 +68,19 @@
     &= E^2 \omega C \sin \left(2 \omega t\right)\\
     \end{align*}
 
+    \begin{center}
+      \includegraphics[width=0.6\linewidth]{./Circuits/Circuits_a.png}
+      \captionof{figure}{回路a} % ✅ OK
+    \end{center}
+    \begin{center}
+      \includegraphics[width=0.6\linewidth]{./Circuits/Circuits_b.png}
+      \captionof{figure}{回路b} % ✅ OK
+    \end{center}
+    \begin{center}
+      \includegraphics[width=0.6\linewidth]{./Circuits/Circuits_c.png}
+      \captionof{figure}{回路c} % ✅ OK
+    \end{center}
+
     \item (d)の回路における電力の導出
     \begin{align*}
       e   &=\sqrt{2}E\sin\omega t\\
@@ -106,10 +113,10 @@
           &= \frac{E^2}{\|Z\|^2} R \left( 1-\cos2\left(\omega t - \Phi\right)\right)\\
           &R\text{と}\omega L \text{との位相差は} \frac{\pi}{2} \text{であり,}\\
           &\text{合成インピーダンス}Z\text{の位相差を}\Phi \text{とすると,}\\
-          &\frac{R}{\|Z\|} = \cos \Phi \text{となるため,}\\
-          ei_R&= \frac{E^2}{\|Z\|} \cos \Phi \left( 1-\cos2\left(\omega t - \Phi\right)\right)\\
     \end{align*}
     \begin{align*}
+      &\frac{R}{\|Z\|} = \cos \Phi \text{となるため,}\\
+      ei_R&= \frac{E^2}{\|Z\|} \cos \Phi \left( 1-\cos2\left(\omega t - \Phi\right)\right)\\
       &\text{次にコイルでの電圧降下}e_L \text{は,}\\
       e_L &= L \frac{di}{dt} = L \frac{d}{dt} \left( \frac{\sqrt{2}E}{\|Z\|} \sin \left( \omega t - \Phi\right) \right)\\
           &= \frac{\sqrt{2}E}{\|Z\|} \omega L \cos \left(\omega t - \Phi\right)\\
@@ -123,6 +130,11 @@
       ei_L&= \frac{E^2}{\|Z\|}\sin \Phi \left(\sin 2\omega t - 2\Phi\right)\\
     \end{align*}
 
+    \begin{center}
+      \includegraphics[width=0.6\linewidth]{./Circuits/Circuits_d.png}
+      \captionof{figure}{回路d} % ✅ OK
+    \end{center}
+
     \item (e)の回路における電力の導出
     \begin{align*}
       e   &=\sqrt{2}E\sin\omega t\\
@@ -131,6 +143,9 @@
       e   &= e_R = e_L\\
       &\text{また,各素子における電圧降下で考えると,}\\
       e   &= {i_R}R = L\frac{di_L}{dt}\\
+    \end{align*}
+    
+    \begin{align*}      
       &\text{抵抗に流れる電流は,オームの法則より,}\\
       i_R &= \frac{e}{R}\\
           &= \frac{\sqrt{2}E}{R}\sin \omega t\\
