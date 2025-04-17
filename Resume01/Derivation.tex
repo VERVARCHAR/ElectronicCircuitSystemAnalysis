@@ -209,6 +209,38 @@
       &\text{よって立式されている.}\\
     \end{align*}
 
+    \item (e)の回路における電力の導出
+    \begin{align*}
+      e &= \sqrt{2}E\sin\omega t \text{とすると,}\\
+      &\text{直列接続であるから合成インピーダンス}Z\text{は,}\\
+      Z &= R + \frac{1}{j\omega C} = R -j\frac{1}{\omega C}\\
+      &\text{となり,}\\
+      \|Z\| &= \sqrt{R^2 + {\left( \frac{1}{\omega C} \right)}^2}\\
+      &Z\text{による位相のずれを}\Phi\text{とすると,}\\
+      &\text{コンデンサによって電流は電圧よりも位相が}\\
+      &\text{進むため,}\\
+      i &= \frac{e}{\|Z\|} = \frac{\sqrt{2}E}{\|Z\|}\sin\left(\omega t + \Phi\right)\\
+      &\text{これらから,回路全体の電力は,}\\
+      ei  &= \sqrt{2}E\sin\omega t \cdot \frac{\sqrt{2}E}{\|Z\|}\sin\left(\omega t + \Phi\right)\\
+          &= \frac{2E^2}{\|Z\|}\sin\omega t\sin\left(\omega t + \Phi\right)\\
+      &\text{加法定理を用いて変換すると,}\\
+          &= \frac{2E^2}{\|Z\|}\sin\omega t\left(\sin\omega t \cos \Phi + \cos\omega t \sin \Phi\right)\\
+          &= \frac{2E^2}{\|Z\|}\left(\sin^2\omega t \cos \Phi + \sin\omega t\cos\omega t \sin \Phi\right)\\
+      &\text{半角公式および,積和公式を用いれば,}\\
+\therefore ei  &= \frac{E^2}{\|Z\|}\left(\left(1-\cos2\omega t\right)\cos \Phi + \sin2\omega t \sin \Phi\right)\\
+      &\text{次に}e_R\text{について考える.}e_R\text{は,オームの法則より,}\\
+      e_R &= iR = \frac{\sqrt{2}ER}{\|Z\|}\sin\left(\omega t + \Phi\right)\\
+      ei_R&= \frac{\sqrt{2}ER}{\|Z\|}\sin\left(\omega t + \Phi\right)\cdot \frac{\sqrt{2}E}{\|Z\|}\sin\left(\omega t + \Phi\right)\\
+          &= \frac{2E^2R}{{\|Z\|}^2}\sin^2\left(\omega t + \Phi\right)\\
+          &= \frac{2E^2R}{{\|Z\|}^2}\left(\frac{1 - \cos2\left(\omega t + \Phi\right)}{2}\right)\\
+          &= \frac{E^2R}{{\|Z\|}^2}\left(1 - \cos2\left(\omega t + \Phi\right)\right)\\
+      &\text{ここで,}\frac{R}{\|Z\|} = \cos \Phi\text{であるから,}\\
+          &= \frac{E^2}{{\|Z\|}}\cos\Phi\left(1 - \cos2\left(\omega t + \Phi\right)\right)\\
+    \end{align*}
+    \begin{center}
+      \includegraphics[width=0.6\linewidth]{./capacitor_Vector_img.png}
+      \captionof{figure}{回路c} % ✅ OK
+    \end{center}
 \end{enumerate}
 
 \end{document}

@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.2-u2.00-250202-2.6 (utf8.euc) (TeX Live 2025) (preloaded format=platex 2025.4.12)  17 APR 2025 16:22
+This is e-upTeX, Version 3.141592653-p4.1.2-u2.00-250202-2.6 (utf8.euc) (TeX Live 2025) (preloaded format=platex 2025.4.12)  17 APR 2025 21:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -282,8 +282,21 @@ Overfull \hbox (5.89734pt too wide) detected at line 210
  []
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[3] (./Derivation.aux)
+
+
+[3]
+File: ./capacitor_Vector_img.png Graphic file (type bmp)
+<./capacitor_Vector_img.png>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+
+
+[4] (./Derivation.aux)
  ***********
 pLaTeX2e <2023-02-14>+1, based on
 LaTeX2e <2024-11-01> patch level 2
@@ -291,12 +304,12 @@ L3 programming layer <2025-03-26>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 4375 strings out of 470271
- 70408 string characters out of 5486373
+ 4382 strings out of 470271
+ 70629 string characters out of 5486373
  509853 words of memory out of 5000000
- 31186 multiletter control sequences out of 15000+600000
+ 31191 multiletter control sequences out of 15000+600000
  632395 words of font info for 65 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 57i,11n,65p,292b,356s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,11n,65p,292b,357s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Derivation.dvi (3 pages, 20264 bytes).
+Output written on Derivation.dvi (4 pages, 24180 bytes).
