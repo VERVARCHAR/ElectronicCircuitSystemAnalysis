@@ -1,0 +1,24 @@
+Nonlinear circuits with sinusoidal supply voltage
+
+The use of nonlinear loads of domestic power ratings has increased greatly in the 1970's.
+Devices such as television and radio receivers, light dimmers and multi-speed electric motor appliances usually incorporate controlled or uncontrolled rectifier elements.
+Television receivers have an input rectifier the supply current then contains a d.c. component.
+A typical supply current oscillogram for a monochrome television set,fig 5.1,illustrates the half-wave nature of the waveform.
+
+Fig 5.1 Supply current waveform for a monochrome TV receiver.
+
+This contains significant harmonic currents up to the 9th harmonic,as well as a d.c.term,fig.5.2.
+For a standard UK make of 21 inch colour receiver the waveform of fig 5.3 was measured and the 50Hz' spikes' had peak values of 7 amps.
+More recent colour receivers have been fitted with a full-wave rectifier input stage to the power supply to eliminate d.c. from the supply lines.
+A typical supply current waveform is given in the oscillogram of fig 5.4.
+In 1976,for example ,there were 18 million TV receivers in the UK - roughly one-half of then being colour receivers.
+
+Industrial loads such as electric arc furnaces and thyristor controlled motors impose a severe nonlinear impedance into the distribution system.
+For example,the first part of an arc furnace load cycle(3-8hours) is called the melt-down period during which the solid charge is melted.
+This is characterised by severe current fluctuations caused by arc instability and the movement of scrap metal.
+These current fluctuations,which are irregular and cannot be precisely predicted,can result in supply voltage dips to other consumers due to fluctuating currents in the supply system impedances.
+For the purpose of studying energy flow and power distribution in nonlinear circuits it is convenient,however,to distinguish the group of applications 
+where the supply voltage remains substantially sinusoidal in spite of the nonsinusoidal current drawn from the supply.
+Such systems are found to possess certain interesting properties from the energy viewpoint and these  properties give useful insight into possible methods of power factor correction.
+
+fig5.2 Harmonic components of the supply current waveform of fig 5.1
