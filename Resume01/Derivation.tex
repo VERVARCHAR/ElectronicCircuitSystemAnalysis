@@ -209,7 +209,7 @@
       &\text{よって立式されている.}\\
     \end{align*}
 
-    \item (e)の回路における電力の導出
+    \item (g)の回路における電力の導出
     \begin{align*}
       e &= \sqrt{2}E\sin\omega t \text{とする.}\\
       &\text{直列接続であるから合成インピーダンス}Z\text{は,}\\
@@ -241,6 +241,35 @@
       \includegraphics[width=0.6\linewidth]{./capacitor_Vector_img.png}
       \captionof{figure}{回路c} % ✅ OK
     \end{center}
+
+    \item (h)の回路における電力の導出
+    \begin{align*}
+    \end{align*}
+    \item (i)の回路における電力の導出
+    \begin{align*}
+      e &= \sqrt{2}E\sin\omega t\text{とする.}\\
+      &\text{合成インピーダンスは}\\
+      Z &= R + j\omega L + \frac{1}{j\omega C}\\
+        &= R + j\omega L -j \frac{1}{\omega C}\\
+      \|Z\| &= \sqrt{R^2 + j{\left(\omega L - \frac{1}{\omega C}\right)}^2}\\
+      &\text{合成インピーダンスの位相差を}\Phi\text{とする.}\\
+      &\text{電流はオームの法則より,}\\
+      i &= \frac{e}{\|Z\|}\\
+        &= \frac{\sqrt{2}E}{\|Z\|}\sin \left(\omega t - \Phi\right)\\
+      ei  &= \sqrt{2}E\sin\omega t \cdot \frac{\sqrt{2}E}{\|Z\|}\sin \left(\omega t - \Phi\right) \\
+          &= \frac{2E^2}{\|Z\|}\sin\omega t  \sin \left(\omega t - \Phi\right) \\
+      &\text{加法定理より,}\\
+          &= \frac{2E^2}{\|Z\|}\sin\omega t \left( \sin \omega t \cos \Phi - \cos \right) \\
+    \end{align*}
+
+    \item (j)の回路における電力の導出
+    \begin{align*}
+    \end{align*}
+
+    \item (k)の回路における電力の導出
+    \begin{align*}
+    \end{align*}
+
 \end{enumerate}
 
 \end{document}
