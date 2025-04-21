@@ -244,6 +244,32 @@
 
   \item (h)の回路における電力の導出
         \begin{align*}
+          e               & = \sqrt{2}E\sin\omega t                                                                 \\
+                          & \text{合成アドミタンスは,}                                                                       \\
+          Y               & = \frac{1}{R} + \frac{1}{\frac{1}{j\omega C}}                     \\
+                          & = \frac{1}{R} + j\omega C                            \\
+          \|Y\|           & = \sqrt{{\left(\frac{1}{R}\right)}^2 + {\left(\omega C\right)}^2} \\
+          \|Z\|           & = \frac{1}{\|Y\|}                                                                       \\
+          & \text{並列接続より各素子にかかる電圧は等しい.}                                                             \\
+          i_R             & = \frac{e}{R}                                                                           \\
+          ei_R            & = \sqrt{2}E\sin\omega t \cdot \frac{\sqrt{2}E}{R}\sin\omega t                           \\
+                          & = \frac{2E^2}{R}\sin^2 \omega t                                                         \\
+                          & = \frac{E^2}{R}\left(1 - \cos 2 \omega t\right)                                         \\
+                          & \text{ここで,合成アドミタンスとの位相差を考えると}                                                           \\
+                          & \frac{\frac{1}{R}}{\|Y\|} = \frac{\|Z\|}{R} = \cos \Phi\text{であるから,}                    \\
+          \therefore ei_R & = \frac{E^2}{\|Z\|}\cos \Phi\left(1 - \cos 2 \omega t\right)\\
+          &\text{次にキャパシタンスによる電力を考える.}     \\
+          i_c &= \frac{de_c}{dt}C\\
+              &= C\frac{d}{dt}\left(\sqrt{2}E\sin\omega t\right)\\
+              &= \sqrt{2}E \omega C  \cos\omega t\\
+        ei_c  &= \sqrt{2}E\sin\omega t \cdot \sqrt{2}E \omega C  \cos\omega t\\
+              &= 2E^2 \omega C \sin\omega t \cos\omega t\\
+              &= E^2 \omega C \sin2\omega t\\
+              &\text{ここで,電圧を基準にしてベクトルを考えると,}\\
+              &\text{位相差}\Phi\text{を使って,}\\
+              \sin \Phi &= \frac{\omega C}{\|Y\|} = \|Z\|\omega C\\
+              \omega C &= \frac{1}{\|Z\|} \sin \Phi\text{であるから}\\
+  \therefore ei_c &= \frac{E^2}{\|Z\|} \sin\Phi \sin2\omega t\\
         \end{align*}
   \item (i)の回路における電力の導出
         \begin{align*}
@@ -268,7 +294,7 @@
                           & = \frac{2E^2}{\|Z\|} \cos \Phi \sin^2\left(\omega t - \Phi\right)                                                                        \\
                           & = \frac{2E^2}{\|Z\|} \cos \Phi \left( \frac{1 - \cos 2 \left(\omega t - \Phi\right)}{2} \right)                                          \\
           \therefore ei_r & = \frac{E^2}{\|Z\|} \cos \Phi \left( 1 - \cos 2 \left(\omega t - \Phi\right)\right)                                                      \\
-                          & \text{次に,リアクタンスでの電力を考える.}
+                          & \text{次に,インダクタンスでの電力を考える.}
         \end{align*}
         \begin{align*}
           e_L             & = L \frac{di}{dt} = L \frac{d}{dt} \left( \frac{\sqrt{2}E}{\|Z\|}\sin \left( \omega t - \Phi\right)\right)                          \\
@@ -304,12 +330,74 @@
                           & = \frac{E^2}{R}\left(1 - \cos 2 \omega t\right)                                         \\
                           & \text{ここで,合成アドミタンスとの位相差を考えると}                                                           \\
                           & \frac{\frac{1}{R}}{\|Y\|} = \frac{\|Z\|}{R} = \cos \Phi\text{であるから,}                    \\
-          \therefore ei_R & = \frac{E^2}{\|Z\|}\cos \Phi\left(1 - \cos 2 \omega t\right)                            \\                           \\
+          \therefore ei_R & = \frac{E^2}{\|Z\|}\cos \Phi\left(1 - \cos 2 \omega t\right)                            \\
+          &\text{次にインダクタンスによる電力を考える.}\\
+          e &= L\frac{di_L}{dt}\\
+          \int di_L &= \frac{1}{L} \int edt\\
+          i_l &= \frac{1}{L}\int \sqrt{2}E\sin\omega t dt\\
+              &= -\frac{\sqrt{2}E}{\omega L}\cos \omega t\\
+          ei_L  &= \sqrt{2}E\sin\omega t \cdot -\frac{\sqrt{2}E}{\omega L}\cos \omega t\\
+                &= -\frac{2E^2}{\omega L}\sin\omega t \cos \omega t\\
+          &\frac{1}{2} \sin 2\alpha = \sin\alpha\cos\alpha\text{より,}\\
+                &= -\frac{E^2}{\omega L}\sin 2\omega t\\
+                \therefore ei_L &= -\frac{E^2}{\omega L}\sin 2\omega t\\
+          &\text{最後にキャパシタンスによる電力を考える.}\\
+          i_c &= \frac{de_c}{dt}C = C \frac{d}{dt}\left(\sqrt{2}E\sin\omega t\right)\\
+              &= \omega C \sqrt{2}E\cos\omega t\\
+          ei_c  &= \sqrt{2}E\sin \omega t \cdot \omega C \sqrt{2}E \cos \omega t\\
+                &= \omega C 2 E^2 \sin \omega t \cos \omega t\\
+\therefore ei_c      &= \omega C E^2 \sin 2\omega t\\
         \end{align*}
 
   \item (k)の回路における電力の導出
         \begin{align*}
-        \end{align*}
+          e &= \sqrt{2}E\sin\omega t\\
+          &\text{R-L直列の合成インピーダンスを}Z_1\text{,}\\
+          &Z_1\text{に流れる電流を}i_1\text{,}\\
+          &\text{R-C直列の合成インピーダンスを}Z_2\text{,}\\
+          &Z_2\text{に流れる電流を}i_2\text{とし}\\
+          &Z_1\text{,}Z_2\text{の位相差をそれぞれ}\Phi_1 \Phi_2\\
+          &\text{とすると,それぞれ以下のように示せる.}\\
+          \|Z_1\| &= \sqrt{{R_1}^2 + {\left(\omega L\right)}^2}\\
+          \|Z_2\| &= \sqrt{{R_2}^2 + {\left(\frac{1}{\omega C}\right)}^2}\\
+          i_1 &= \frac{\sqrt{2}E}{\|Z_1\|} \sin \left(\omega t - \Phi_1\right)\\
+          i_2 &= \frac{\sqrt{2}E}{\|Z_2\|} \sin \left(\omega t + \Phi_2\right)\\
+          &\text{まず,}R_1\text{の電力を求める.}\\
+          e_{r1} &= i_1R = \frac{\sqrt{2}ER}{\|Z_1\|}\sin\left(\omega t - \Phi_1\right)\\
+          ei_{r1} &= \frac{\sqrt{2}ER}{\|Z_1\|}\sin\left(\omega t - \Phi_1\right) \cdot \frac{\sqrt{2}E}{\|Z_1\|} \sin \left(\omega t - \Phi_1\right)\\
+               &= \frac{2E^2}{{\|Z_1\|}^2}R\sin^2\left(\omega t - \Phi_1\right)\\
+          &\cos \Phi_1 = \frac{R}{\|Z_1\|}\text{より,}\\
+               &= \frac{2E^2}{\|Z_1\|}\sin\Phi_1\sin^2\left(\omega t - \Phi_1\right)\\
+\therefore ei_{r1} &= \frac{E^2}{\|Z_1\|}\sin\Phi_1 \left(1 - \cos 2 \left(\omega t - \Phi_1\right)\right)\\
+          &\text{次にインダクタンスの電力を求める.}\\
+          e_L &= L \frac{di_1}{dt} = L \frac{d}{dt} \left(\frac{\sqrt{2}E}{\|Z_1\|} \sin \left(\omega t - \Phi_1\right)\right)\\
+              &= \frac{\sqrt{2}E}{\|Z_1\|} \omega L \cos \left( \omega t - \Phi_1 \right)\\
+          &\sin \Phi_1 = \frac{\omega L}{\|Z_1\|}\text{より,}\\
+              &= \sqrt{2}E\sin \Phi_1 \cos \left( \omega t - \Phi_1 \right)\\
+          ei_L  &= \sqrt{2}E\sin \Phi_1 \cos \left( \omega t - \Phi_1 \right) \cdot \frac{\sqrt{2}E}{\|Z_1\|} \sin \left(\omega t - \Phi_1\right)\\
+                &= \frac{2E^2}{\|Z_1\|}\sin\Phi \sin \left( \omega t - \Phi_1\right)\cos \left( \omega t - \Phi_1\right)\\
+                &= \frac{E^2}{\|Z_1\|}\sin\Phi \sin2\left( \omega t - \Phi_1\right)\\
+          &\text{次に,}R_2\text{の電力を求めるが,電流の位相差が異なるだけであるため,}\\
+          e_{r2} &= i_2R = \frac{\sqrt{2}ER}{\|Z_2\|}\sin\left(\omega t + \Phi_2\right)\\
+          ei_{r2} &= \frac{\sqrt{2}ER}{\|Z_2\|}\sin\left(\omega t + \Phi_2\right) \cdot \frac{\sqrt{2}E}{\|Z_2\|} \sin \left(\omega t + \Phi_2\right)\\          
+\end{align*}
+\begin{align*}
+  \therefore ei_{r2} &= \frac{E^2}{\|Z_2\|}\sin\Phi_2 \left(1 - \cos 2 \left(\omega t + \Phi_2\right)\right)\\
+          &\text{次に,}C\text{の電力を求める.}\\
+          i_2 &= \frac{de_c}{dt}C\\
+          \int de_c &= \frac{1}{C} \int di_c dt\\
+          e_c   &= \frac{1}{C} \int \frac{\sqrt{2}E}{\|Z_2\|}\sin \left( \omega t + \Phi_2\right) dt\\
+                &= -\frac{\sqrt{2}E}{\omega C\|Z_2\|} \cos \left( \omega t + \Phi_2\right)\\
+          ei_c  &= -\frac{\sqrt{2}E}{\omega C\|Z_2\|} \cos \left( \omega t + \Phi_2\right) \cdot \frac{\sqrt{2}E}{\|Z_2\|}\sin \left( \omega t + \Phi_2\right)\\
+          &\sin \Phi_2 = \frac{\omega C}{\|Z_2\|}\text{,加法定理の逆より,}\\
+\therefore ei_c &= -\frac{2E^2}{\|Z_2\|}\sin \Phi_2 \sin 2\left(\omega t + \Phi_2\right)\\
+          &\text{全体の電力}ei\text{は,}\\
+          ei  &= e\left(i_1 + i_2\right)\\
+              &= \sqrt{2}E\sin\omega t \cdot \\
+              & \left(\frac{\sqrt{2}E}{\|Z_1\|}\sin\left(\omega t - \Phi_1\right) +  \frac{\sqrt{2}E}{\|Z_2\|}\sin\left(\omega t + \Phi_2\right)\right)\\
+\therefore ei     =&\frac{E^2}{\|Z_1\|}\left(\cos\Phi_1 - \cos\left(2\omega t - \Phi_1\right)\right) -\\
+                 &\frac{E^2}{\|Z_2\|}\left(\cos\Phi_2 + \cos\left(2\omega t + \Phi_2\right)\right)\\
+\end{align*}
 
 \end{enumerate}
 
