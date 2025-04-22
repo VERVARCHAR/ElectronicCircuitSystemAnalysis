@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.2-u2.00-250202-2.6 (utf8.euc) (TeX Live 2025) (preloaded format=platex 2025.4.12)  20 APR 2025 16:08
+This is e-upTeX, Version 3.141592653-p4.1.2-u2.00-250202-2.6 (utf8.euc) (TeX Live 2025) (preloaded format=platex 2025.4.12)  22 APR 2025 21:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -619,28 +619,7 @@ LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
 
 [1
 
-] (./Words.tex
-LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 6.72699pt on input line 2.
-LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 4.805pt on input line 2.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 2.
-LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 6.72699pt on input line 2.
-LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 4.805pt on input line 2.
-)
-
-[2] (./Resume1_2.aux)
+] (./Resume1_2.aux)
  ***********
 pLaTeX2e <2023-02-14>+1, based on
 LaTeX2e <2024-11-01> patch level 2
@@ -648,12 +627,12 @@ L3 programming layer <2025-03-26>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 16276 strings out of 470271
- 320169 string characters out of 5486373
- 692445 words of memory out of 5000000
- 42817 multiletter control sequences out of 15000+600000
- 637736 words of font info for 91 fonts, out of 8000000 for 9000
+ 16212 strings out of 470271
+ 319177 string characters out of 5486373
+ 691445 words of memory out of 5000000
+ 42778 multiletter control sequences out of 15000+600000
+ 632820 words of font info for 69 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 84i,8n,93p,462b,260s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,5n,93p,462b,197s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Resume1_2.dvi (2 pages, 5288 bytes).
+Output written on Resume1_2.dvi (1 page, 4156 bytes).

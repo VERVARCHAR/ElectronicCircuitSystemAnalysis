@@ -237,9 +237,36 @@
                         & \text{ここで,}\frac{R}{\|Z\|} = \cos \Phi\text{であるから,}                                                                     \\
                         & = \frac{E^2}{{\|Z\|}}\cos\Phi\left(1 - \cos2\left(\omega t + \Phi\right)\right)                                         \\
         \end{align*}
+        \begin{align*}
+            &\text{次にキャパシタンスによる電力を考える.}\\
+            i &= \frac{de_c}{dt}C\\
+            \frac{1}{C} i dt &= de_c\\
+            \int de_c &= \int \frac{1}{C} i dt\\
+            e_c &=  \frac{1}{C} \int \frac{\sqrt{2}E}{\|Z\|} \sin\left(\omega t + \Phi\right)dt\\
+            e_c &=  \frac{\sqrt{2}E}{C \|Z\|} \int \sin\left(\omega t + \Phi\right)dt\\
+            e_c &=  -\frac{\sqrt{2}E}{\omega C \|Z\|} \cos\left(\omega t + \Phi\right)\\
+            ei_c  &= -\frac{\sqrt{2}E}{\omega C \|Z\|} \cos\left(\omega t + \Phi\right) \cdot \frac{\sqrt{2}E}{\|Z\|}\sin\left(\omega t + \Phi\right)\\
+                  &= -\frac{2E^2}{\omega C {\|Z\|}^2} \cos\left(\omega t + \Phi\right) \sin\left(\omega t + \Phi\right)\\
+                  &\sin\Phi = \frac{\frac{1}{\omega C}}{\|Z\|} = \frac{1}{\omega C \|Z\|} \text{及び,加法定理の逆より,}\\
+\therefore ei_c   &= -\frac{E^2}{\|Z\|} \sin2\left(\omega t + \Phi\right)\\
+        \end{align*}
+
         \begin{center}
-          \includegraphics[width=0.6\linewidth]{./capacitor_Vector_img.png}
-          \captionof{figure}{回路c} % ✅ OK
+            \includegraphics[width=0.4\linewidth]{./Circuits/Circuits_e.png}
+            \captionof{figure}{回路e} % ✅ OK
+          \end{center}
+          \begin{center}
+            \includegraphics[width=0.4\linewidth]{./Circuits/Circuits_f.png}
+            \captionof{figure}{回路f} % ✅ OK
+          \end{center}
+          \begin{center}
+            \includegraphics[width=0.4\linewidth]{./Circuits/Circuits_g.png}
+            \captionof{figure}{回路g} % ✅ OK
+          \end{center}
+
+        \begin{center}
+          \includegraphics[width=0.5\linewidth]{./capacitor_Vector_img.png}
+          \captionof{figure}{ベクトル図} % ✅ OK
         \end{center}
 
   \item (h)の回路における電力の導出
@@ -265,12 +292,15 @@
         ei_c  &= \sqrt{2}E\sin\omega t \cdot \sqrt{2}E \omega C  \cos\omega t\\
               &= 2E^2 \omega C \sin\omega t \cos\omega t\\
               &= E^2 \omega C \sin2\omega t\\
-              &\text{ここで,電圧を基準にしてベクトルを考えると,}\\
-              &\text{位相差}\Phi\text{を使って,}\\
-              \sin \Phi &= \frac{\omega C}{\|Y\|} = \|Z\|\omega C\\
-              \omega C &= \frac{1}{\|Z\|} \sin \Phi\text{であるから}\\
-  \therefore ei_c &= \frac{E^2}{\|Z\|} \sin\Phi \sin2\omega t\\
         \end{align*}
+        \begin{align*}
+            &\text{ここで,電圧を基準にしてベクトルを考えると,}\\
+            &\text{位相差}\Phi\text{を使って,}\\
+            \sin \Phi &= \frac{\omega C}{\|Y\|} = \|Z\|\omega C\\
+            \omega C &= \frac{1}{\|Z\|} \sin \Phi\text{であるから}\\
+\therefore ei_c &= \frac{E^2}{\|Z\|} \sin\Phi \sin2\omega t\\
+        \end{align*}
+
   \item (i)の回路における電力の導出
         \begin{align*}
           e               & = \sqrt{2}E\sin\omega t\text{とする.}                                                                                                       \\
@@ -314,7 +344,14 @@
                           & = -\frac{E^2}{\omega C {\|Z\|}^2}\sin2\left(\omega t -\Phi\right)                                                                   \\
         \end{align*}
 
-
+        \begin{center}
+            \includegraphics[width=0.4\linewidth]{./Circuits/Circuits_h.png}
+            \captionof{figure}{回路h} % ✅ OK
+          \end{center}
+          \begin{center}
+            \includegraphics[width=0.4\linewidth]{./Circuits/Circuits_i.png}
+            \captionof{figure}{回路i} % ✅ OK
+          \end{center}
   \item (j)の回路における電力の導出
         \begin{align*}
           e               & = \sqrt{2}E\sin\omega t                                                                 \\
@@ -398,7 +435,14 @@
 \therefore ei     =&\frac{E^2}{\|Z_1\|}\left(\cos\Phi_1 - \cos\left(2\omega t - \Phi_1\right)\right) -\\
                  &\frac{E^2}{\|Z_2\|}\left(\cos\Phi_2 + \cos\left(2\omega t + \Phi_2\right)\right)\\
 \end{align*}
-
+\begin{center}
+      \includegraphics[width=0.4\linewidth]{./Circuits/Circuits_j.png}
+      \captionof{figure}{回路j} % ✅ OK
+    \end{center}
+    \begin{center}
+      \includegraphics[width=0.4\linewidth]{./Circuits/Circuits_Z3_5.png}
+      \captionof{figure}{図3.5の回路} % ✅ OK
+    \end{center}
 \end{enumerate}
 
 \end{document}

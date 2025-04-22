@@ -1,15 +1,106 @@
-\begin{table}[ht]
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% Beamer presentation requires \usepackage{colortbl} instead of \usepackage[table,xcdraw]{xcolor}
+\documentclass[fleqn,9pt,a4paper,dvipdfmx]{jsarticle}
+%
+\usepackage{amsmath,amssymb}
+\usepackage{bm}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{bmpsize}  % ← バウンディングボックス用
+\usepackage{ascmac}
+\usepackage{multicol} 
+\usepackage{paracol}
+\usepackage{tikz}
+\usepackage{caption}
+\usepackage[table,xcdraw]{xcolor}
+\vspace*{-\baselineskip} % ← 不要な最初の空白を詰める
+\usepackage[
+  left=2cm,    % 左だけ広め
+  right=2cm,   % 右は狭め
+  top=2cm,     % 上も狭め
+  bottom=1.5cm   % 下も狭め
+]{geometry}
+%
+\newcommand{\divergence}{\mathrm{div}\,}  %ダイバージェンス
+\newcommand{\grad}{\mathrm{grad}\,}  %グラディエント
+\newcommand{\rot}{\mathrm{rot}\,}  %ローテーション
+%
+% \pagestyle{myheadings}
+\begin{document}
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% Beamer presentation requires \usepackage{colortbl} instead of \usepackage[table,xcdraw]{xcolor}
+  \begin{enumerate}
+    \item Instantaneous relationships for series-parallel R-L-C load
+  
+  \begin{table}[h]
+    \begin{tabular}{l|ll}
+    単語            & 品詞    & 日本語訳                 \\ \hline
+    Instantaneous & 形容詞   & 瞬間の,即時の              \\ \hline
+    associated    & 他動詞   & 関係づける，関連づけて考える，連想する. \\ \hline
+                  & 自動詞   & 〔…と〕提携する，連携する，連合する   \\
+                  & 可算名詞  & 仲間; 同僚.              \\
+                  & 形容詞   & 連合した，仲間の.            \\ \hline
+    particular    & 形容詞   & 特にこの, 特有の            \\ \hline
+    dissipation   & 不可算名詞 & 消散,消失,浪費             \\ \hline
+    invariant     & 名詞    & 不変; 不変関係; 不変量       \\ \hline
+    distribution        & (不可算)名詞 & 配分,配給      \\
+    power distribution  &         & 配電                \\ \hline
+    component           & 名詞      & 構成要素,成分     \\
+    reactive components &         & 無効成分            \\ \hline
+    shunt               & 他動詞  & 入れ替える,変える   \\
+                        & 名詞    & 分岐器              \\
+    shunted             & 過去分詞& 分路,短絡           \\ 
+    shunt circuit       &         & 分岐(並列)回路,分路 \\ \hline
+    \end{tabular}
+    \end{table}
+    \newpage
+
+    \item Nonlinear circuits with sinusoidal supply voltage
+\begin{table}[h]
   \begin{tabular}{l|ll}
-  単語                & 品詞      & 日本語訳          \\ \hline
-  distribution        & (不可算)名詞 & 配分,配給      \\
-  power distribution  &         & 配電                \\ \hline
-  component           & 名詞      & 構成要素,成分     \\
-  reactive components &         & 無効成分            \\ \hline
-  shunt               & 他動詞  & 入れ替える,変える   \\
-                      & 名詞    & 分岐器              \\
-  shunted             & 過去分詞& 分路,短絡           \\ 
-  shunt circuit       &         & 分岐(並列)回路,分路 \\ \hline
-  
-  
+  単語                         & 品詞                             & 意味                             \\ \hline
+  nonlinear                  & 形容詞                            & 非線形の                           \\ \hline
+  dimmer                     & 可算名詞                           & 薄暗くするもの,(証明の)調光器,制光装置          \\
+  light dimmers              &                                & 調光器                            \\ \hline
+  multi-speed electric motor &                                & 多段速度電動機                        \\ \hline
+  appliances                 & 可算名詞                           & (特に,家庭用の)器具,装置,設備,電気製品         \\ \hline
+  incorporate                & 他動詞                            & (…に)組み入れる,(…を)(…と)合体させる,合同させる \\ \hline
+  incorporate controlled     &                                & 制御されたものを組み込む                   \\ \hline
+  rectifier                  & 可算名詞                           & 整流器.                           \\ \hline
+  oscillogtam                & 名詞                             & オシログラフによって生み出される記録             \\ \hline
+  monochrome                 & 形容詞                            & 単色の,白黒の                        \\
+                             & 可算名詞                           & 単色画; 黒白写真，モノクロ(写真)            \\
+                             & 不可算名詞                          & 単色画{[}写真{]}法                  \\ \hline
+  waveform                   & 名詞                             & 波形                             \\ \hline
+  signficant (harmonic)      & 形容詞                            & 重要な，意義深い                      \\ \hline
+  colour                     & 不可算名詞                          & 色                              \\ \hline
+                             & 他動詞                            & 〈…に〉彩色する，色を塗る; 染める            \\
+                             & 形容詞                            & 色の，色彩の                        \\ \hline
+  measured                   & 形容詞                            & 熟慮した，慎重な                      \\ \hline
+  amp                        &                                 & アンペア                             \\\hline
+  eliminate                  & 他動詞                            & 〈…を〉除く，除去する                   \\ \hline
+  roughly                    & 副詞                             & ざっと,概略的に                       \\ \hline
+  industrial(loads)          & 形容詞                            & 産業(上)の，工業(上)の，工業用の            \\ \hline
+  furnace                    & 可算名詞                           & 炉，かまど.暖房炉                     \\ \hline
+  thyristor                  &                                & 電流を制御することができる半導体素子             \\ \hline
+  melt-down                  & 他動詞+ 副詞 & 〈地金などを〉溶かす,   鋳つぶす            \\
+                             & 自動詞+ 副詞                        & 溶ける, 溶解する                     \\ \hline
+  solid                      & 形容詞                            & 固体の，固形体の,学問など〉基礎のしっかりした; 堅実な  \\ \hline
+  characterised              & 動詞                             & 特徴づける                          \\ \hline
+  severe                     & 形容詞                            & 厳しい,厳格な                        \\ \hline
+  fluctuation                & 名詞                             & 高下，変動                        \\ \hline
+  arc                        & 可算名詞                           & 弧，円弧; 【電気】 アーク，電弧.             \\ \hline
+  instability                & 不可算名詞                          & 不安定(性),                        \\ \hline
+  scrap                      & 名詞                             & 切れ端{[}否定文で{]} 少し,鉄くず，スクラップ     \\
+                             & 形容詞                            & 小片の，断片からなる                    \\
+                             & 他動詞                            & くず鉄にする                        \\ \hline
+  precisely                  & 副詞                             & 正確に，精密に                        \\ \hline
+  predict                    & 他動詞                            & (…を)予言する,予報する                  \\ \hline
+  dips                       & 他動詞                            & ちょっと浸す                        \\
+                             & 自動詞                            & 沈む,下がる                        \\ \hline
+  distinguish                & 他動詞                            & はっきり区別する，見分ける，聞き分ける \\
   \end{tabular}
-\end{table}
+  \end{table}
+\end{enumerate}
+  \end{document}
