@@ -1,0 +1,39 @@
+Parallel combination of a linear and a nonlinear load
+Let the nonlinear load of fig. 12.1 be removed.
+Then, in fig 12.2
+i_l = 0 (12.17)
+i = i_b = e_in / (Z_a + Z_d) (12.18)
+
+The subscript '1' is now used indicate the 
+impedance to the fundamental or supply frequency harmonic of current.
+Let the combined input impedance be Z_a1d1,where
+Za1d1 = Za1 + Zd1 = |Za1d1| < phai_a1d1 (12.19)
+Note that
+|Za1d1| = \sqrt{|Za1|^2 + |Zd1|^2 + 2|Za1||Zd1|cos(phai_a1 - phai_d1) } (12.20)
+phai_a1d1 = tan^-1 () (12.21)
+
+Let the capacitor Zc,fig 12.2 now be removed.
+With this condition
+Z_d1 = Z_b1 (12.22)
+Combinig (12.8) to (12.22)
+
+(12.23)
+
+For the condition to linear, uncompensated load Z_b the load voltage e_0 is modified to 
+(12.24)
+Combining (12.33) and (12.24) gives
+(12.25)
+Current i at the load can be resolved into hypothentical components i_R,i_x(with respect to e_0) that would flow if an equivalent parallel load of pure resistance and pure reactance was used.
+(12.26)
+(12.27)
+Combining the rms forms of (12.26) and (12.27) with the rms form of (12.25) gives components of the apparent voltamperes at the load terminals.
+(12.28)
+(12.29)
+For unity power factor operation at the load the capacitor C,
+fig 12.2,must compensate i_x of (12.27) and must thereby have a voltampere rating equal to S_x of (12.29) therefore
+(12.30)
+(12.31)
+The impedance Z_d1,looking into the terminals of the compensated load is given by 
+(12.32)
+For a completely compensated load the input impedance,(12.32),is purely resistive.
+
