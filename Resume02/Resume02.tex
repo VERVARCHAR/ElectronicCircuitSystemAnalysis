@@ -14,7 +14,7 @@
 \captionsetup[table]{justification=centering}
 \captionsetup[figure]{justification=centering}
 \usetikzlibrary{calc}
-%
+\renewcommand{\thefigure}{\thesection.\arabic{figure}}
 % \setlength{\textwidth}{\fullwidth}
 % \setlength{\textheight}{39\baselineskip}
 % \addtolength{\textheight}{\topskip}
@@ -75,14 +75,24 @@
 ここで、コンデンサ$Z_c$(図12.2)を取り除くとします。
 この条件では
 \begin{equation}
-  Z_d1 = Z_b1
+  Z_{d1} = Z_{b1}
 \end{equation}
 (12.8)を(12.22)に組み合わせると
-
 \begin{align}
   i & = \frac{e_{in}}{\left| Z_{a1d1}\angle Z_{a1d1} \right|} = i_b \notag                     \\
     & = \sqrt{2} \frac{E_{in}}{\left|Z_{a1d1}\right|} \sin \left(\omega t - \Phi_{a1d1}\right)
 \end{align}
+
+\setcounter{figure}{1}
+\begin{figure}[b]
+  \begin{center}
+    \includegraphics[width=100mm]{./img/circuit.jpg}
+    \caption{図12.1において線形部分の等価回路}
+    \label{circuit}
+  \end{center}
+\end{figure}
+
+\newpage
 
 線形、非補償負荷$Z_b$に対する条件では、負荷電圧$e_0$は次のように修正されます。
 
@@ -111,7 +121,6 @@
 \begin{equation}
   S_R = \frac{{E_{in}}^2 \left|Z_{b1}\right|}{{\left|Z_{a1b1}\right|}^2}\cos\Phi_{b1}
 \end{equation}
-\newpage
 
 \begin{equation}
   S_X = \frac{{E_{in}}^2 \left|Z_{b1}\right|}{{\left|Z_{a1b1}\right|}^2}\sin\Phi_{b1}
@@ -141,9 +150,11 @@
 words
 
 \newpage
+\setcounter{section}{1}
+\setcounter{figure}{0}
 \section*{式の導出}
 \subsection*{式(12.20)の導出}
-\begin{figure}[htbp]
+\begin{figure}[b]
   \begin{center}
     \includegraphics[width=100mm]{./img/vector_Z.jpg}
     \caption{ベクトルのイメージ図}
@@ -189,4 +200,46 @@ $Z_{d1x} = \left|Z_d\right| \cos \Phi_{d1}$ ,$Z_{d1y} = \left|Z_d\right| \sin \P
   \Phi_{a1d1} = \tan^{-1}\left( \frac{\left| Z_{a1} \right| \sin \Phi_{a1} + \left| Z_{d1} \right| \sin \Phi_{d1} }{\left| Z_{a1} \right| \cos \Phi_{a1} + \left| Z_{d1} \right| \cos \Phi_{d1}}\right)
 \end{align*}
 が得られる。
+
+\subsection*{式(12.23)の導出}
+% まず、式(12.8)は、
+% \begin{equation*}
+%   i_{bx} = \sqrt{2} \sum_{1}^{n} \frac{E_n}{\left|Z_{dn}\right|} \sin \Phi_{dn} \cos \left(n\omega t + \alpha_n\right)
+% \end{equation*}
+まず、式(12.18)は、
+\begin{equation*}
+  i = i_b = \frac{e_{in}}{\left(Z_a + Z_d\right)}
+\end{equation*}
+図12.2からキャパシタを除去した場合、$Z_d$部分は,$Z_b$のみとなり、
+並列部分がなくなるため$i = i_b$が成立する。
+これを式(12.18)に代入すると、電流$i$は、
+$e_{in} = \sqrt{2}E_{in}\sin \omega t$
+を用いて、オームの法則、式変換をしやすくするためにフェーザ表を用いて、
+\begin{align*}
+  i & = i_b = \frac{e_{in}}{Z_{a1d1}} = \frac{e_{in}}{Z_{a1b1}} = \frac{\sqrt{2}E_{in}\sin \left(\omega t\right)}{\left|Z_{a1b1}\right| \angle \Phi_{a1b1}}
+  = \frac{ \sqrt{2}{E_{in}}^{j \omega t} }{\left| Z_{a1b1} \right|^{j\Phi_{a1b1}}} = \sqrt{2} {\left(\frac{E_{in}}{\left|Z_{a1b1}\right|}\right)}^{j \left(\omega t - \Phi_{a1b1}\right)} \\
+    & = \sqrt{2} \frac{ E_{in} }{\left| Z_{a1b1} \right|}\sin \left(\omega t - \Phi_{a1b1}\right)
+\end{align*}
+が得られる。
+
+\subsection*{式(12.25)の導出}
+式(12.23)及び、(12.24)から、
+\begin{equation*}
+  \left\{ \,
+  \begin{aligned}
+     & i = i_b = \sqrt{2} \frac{ E_{in} }{\left| Z_{a1b1} \right|}\sin \left(\omega t - \Phi_{a1b1}\right) & \left(12.23\right) \\
+     & e_0 = i_b \left(\left|Z_{b1} \angle \Phi_{b1}\right|\right)                                         & \left(12.24\right)
+  \end{aligned}
+  \right.
+\end{equation*}
+であるから、
+\begin{align*}
+  e_0 & = \sqrt{2} \frac{ E_{in} }{\left| Z_{a1b1} \right|}\sin \left(\omega t - \Phi_{a1b1}\right) \cdot \left(\left|Z_{b1}\right| \angle \Phi_{b1}\right)
+  = \sqrt{2} \left(\frac{ E_{in} }{\left| Z_{a1b1} \right|}\right)^{j\left(\omega t - \Phi_{a1b1}\right)} \cdot {\left|Z_{b1}\right|}^{j\Phi_{b1}}          \\
+      & = \sqrt{2} \left(\frac{ E_{in} }{\left| Z_{a1b1} \right|} \left|Z_{b1}\right| \right)^ {j\left(\omega t - \Phi_{a1b1} + j\Phi_{b1}\right)}
+  = \sqrt{2} \frac{ E_{in} }{\left| Z_{a1b1} \right|} \left|Z_{b1}\right| \sin {\left(\omega t - \Phi_{a1b1} + j\Phi_{b1}\right)}
+\end{align*}
+が得られる。
+
+
 \end{document}
