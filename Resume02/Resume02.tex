@@ -285,16 +285,16 @@ $\cos \Phi_{b1}$及び、$\sin \Phi_{b1}$に関しては定数であるため実
 つまり、${\left(\sin \left( \omega t - \Phi_{a1b1}\right)\right)}^2$の項の実効値を考えればよい。
 $\left(\sin \left( \omega t - \Phi_{a1b1}\right)\right)$の実効値は、
 \begin{align*}
-    & \sqrt{\frac{1}{T} \int_{0}^{T}  \sin^2 \left( \omega t - \Phi_{a1b1}\right)} dt               &\text{(半角の公式)}\\
+    & \sqrt{\frac{1}{T} \int_{0}^{T}  \sin^2 \left( \omega t - \Phi_{a1b1}\right)} dt               &\because \text{(半角の公式)}\\
   = & \sqrt{ \frac{1}{2T} \int_{0}^{T}  1 - \cos 2 \left( \omega t - \Phi_{a1b1}\right)} dt         \\
   = & \sqrt{ \frac{1}{2T} \left[  1 - \sin 2 \left( \omega t - \Phi_{a1b1}\right) \right]_{0}^{T}}  \\
   = & \sqrt{ \frac{1}{2T} \left\{ \left(T - \frac{1}{2\omega} \sin 2 \left( \omega T - \Phi_{a1b1}\right)\right) - 
   \left(0 - \frac{1}{2\omega} \sin 2 \left( 0 - \Phi_{a1b1}\right)\right) \right\} }  
-  &\sin \left(\omega t - \Phi_{a1b1}\right)\text{の周期は}\frac{2\pi}{\omega}\\
+  &\because  \sin \left(\omega t - \Phi_{a1b1}\right)\text{の周期は}\frac{2\pi}{\omega}\\
   = & \sqrt{ \frac{1}{2T} \left\{ \left(T - \frac{1}{2\omega} \sin \left(2 \omega \frac{2\pi}{\omega} - 2\Phi_{a1b1}\right)\right) + 
   \frac{1}{2\omega} \sin \left(-2\Phi_{a1b1}\right) \right\} }  \\
   = & \sqrt{ \frac{1}{2T} \left\{ \left(T - \frac{1}{2\omega} \sin \left(4\pi - 2\Phi_{a1b1}\right)\right) + 
-  \frac{1}{2\omega} \sin \left(-2\Phi_{a1b1}\right) \right\} }  &\sin \left(2n\pi + \theta\right) = \sin \left(\theta\right)\text{であるから}\\
+  \frac{1}{2\omega} \sin \left(-2\Phi_{a1b1}\right) \right\} }  &\because \sin \left(2n\pi + \theta\right) = \sin \left(\theta\right)\\
   = & \sqrt{ \frac{1}{2T} \left\{ \left(T - \frac{1}{2\omega} \sin \left(- 2\Phi_{a1b1}\right)\right) + 
   \frac{1}{2\omega} \sin \left(-2\Phi_{a1b1}\right) \right\} }  = \frac{1}{\sqrt{2}} \\
 \end{align*}
@@ -308,4 +308,47 @@ $\left(\sin \left( \omega t - \Phi_{a1b1}\right)\right)$の実効値は、
 \end{align*}
 が得られる。
 
+\subsection*{式(12.30),式(12.31)の導出}
+キャパシタの並列接続によって、インダクタンスによる位相のズレを無くしたい。
+インダクタンスによる位相のずれは$\frac{\pi}{2}$であるのに対し、
+キャパシタによる位相のずれは$-\frac{\pi}{2}$であるため、
+それぞれの素子による電力の大きさが等しければ打ち消すことができる。
+ここで、キャパシタはインダクタンスに対して並列接続に接続するため、
+それぞれの素子にかかる電圧は等しくなる。
+つまり、それぞれのインピーダンスの大きさが等しければ打ち消すことができるということになる。
+キャパシタによる電力$Q_C$は、キャパシタにかかる電圧を$V_c$とすると、
+\begin{align*}
+  Q_C &= \frac{{V_c}^2}{\left|Z_c\right|} &\because \text{$V_c = V_b$($V_b$はリアクタンスにかかる電圧)} \\
+  Q_C &= \frac{{V_b}^2}{\left|Z_c\right|}
+\end{align*}
+これが、リアクタンスによる皮相電力$S_X$と等しければよいので、
+\begin{align*}
+  Q_C &= \frac{{V_b}^2}{\left|Z_c\right|} = \frac{{E_{in}}^2 \left|Z_{b1}\right|}{{\left|Z_{a1b1}\right|}^2}\sin\Phi_{b1} 
+  &\because \text{分圧則} V_b = E_{in} \cdot \frac{\left|Z_{b1}\right|}{\left|Z_{a1b1}\right|}\\
+  \frac{{V_b}^2}{\left|Z_c\right|} &= \frac{{E_{in}}^2 \left|Z_{b1}\right|}{{\left|Z_{a1b1}\right|}^2}\sin\Phi_{b1}\\
+  \frac{{\left(E_{in} \cdot \frac{\left|Z_{b1}\right|}{\left|Z_{a1b1}\right|}\right)}^2}{\left|Z_c\right|} &= \frac{{E_{in}}^2 \left|Z_{b1}\right|}{{\left|Z_{a1b1}\right|}^2}\sin\Phi_{b1}\\
+  \frac{{E_{in}}^2 {\left|Z_{b1}\right|}^2}{\left|Z_c\right| {\left|Z_a1b1\right|}^2} &= \frac{{E_{in}}^2 \left|Z_{b1}\right|}{{\left|Z_{a1b1}\right|}^2}\sin\Phi_{b1}\\
+  \frac{\left|Z_{b1}\right|}{\left|Z_c\right|} &= \sin \Phi_{b1} \\
+  \therefore \left|Z_c\right| &= \frac{\left|Z_{b1}\right|}{\sin \Phi_{b1}}\\
+\end{align*}
+また、
+\begin{align*}
+  \left|Z_c\right| = \frac{1}{\omega C} = \frac{\left|Z_{b1}\right|}{\sin \Phi_{b1}}\\
+  \therefore C &= \frac{ \sin \Phi_{b1}}{\omega \left|Z_[b1]\right|}\\
+\end{align*}
+が得られる。
+
+\subsection*{式(12.32)の導出}
+まず、インピーダンス$Z_{b1} = R + jX$とすると$Z_{b1} = \left|Z_{b1}\right| \left(\cos \Phi_{b1} + j\sin\Phi_{b1}\right)$と表せる。
+また、インピーダンス$Z_c$は$-j\left|Z_c\right|$と表せる。
+これらから、補償後の合成インピーダンス$Z_d$は、
+\begin{align*}
+  \frac{1}{Z_d} &= \frac{1}{Z_b1} + \frac{1}{Z_C} 
+  = \frac{1}{\left|Z_{b1}\right| \left(\cos \Phi_{b1} + j\sin\Phi_{b1}\right) } + \frac{1}{-j \frac{\left| Z_{b1} \right|}{\sin \Phi_{b1}}}
+  &\because \text{式(12.30)}\\
+                &= \frac{1}{\left|Z_{b1}\right|} \left(\cos \Phi_{b1} - j\sin\Phi_{b1}\right) + \frac{1}{\left| Z_{b1} \right|}j\sin \Phi_{b1}\\
+  \frac{1}{Z_d} &= \frac{1}{\left|Z_{b1}\right|}\cos \Phi_{b1} \\
+  \therefore Z_d &=  \frac{\left|Z_{b1}\right|}{\cos \Phi_{b1}} \angle 0
+\end{align*}
+が得られる。
 \end{document}
