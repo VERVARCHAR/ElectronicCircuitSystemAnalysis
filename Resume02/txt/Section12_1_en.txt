@@ -23,7 +23,7 @@ For the condition to linear, uncompensated load Z_b the load voltage e_0 is modi
 (12.24)
 Combining (12.33) and (12.24) gives
 (12.25)
-Current i at the load can be resolved into hypothentical components i_R,i_x(with respect to e_0) that would flow if an equivalent parallel load of pure resistance and pure reactance was used.
+Current i at the load can be resolved into hypothetical components i_R,i_x(with respect to e_0) that would flow if an equivalent parallel load of pure resistance and pure reactance was used.
 (12.26)
 (12.27)
 Combining the rms forms of (12.26) and (12.27) with the rms form of (12.25) gives components of the apparent voltamperes at the load terminals.
